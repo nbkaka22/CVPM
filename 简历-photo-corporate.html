@@ -2,7 +2,7 @@
 <!--
   Photo Corporate — 产品总监简历 (明亮蓝 + 可编辑版)
   主色调：明亮蓝 #2563eb，技能为胶囊样式
-  使用：浏览器打开 → 点底部"编辑模式"即可增删改所有内容 → "保存HTML"直接覆盖原文件
+  使用：浏览器打开 → 点底部"编辑模式"改内容 → "🚀发布到GitHub"一键覆盖线上文件（首次需填Token，仅存本地）→ "💾存到本地"下载副本
   转PDF：Ctrl+P → 另存为PDF → 边距None → 勾选背景图形（编辑工具栏自动隐藏）
 -->
 <html lang="zh-CN">
@@ -313,7 +313,8 @@
 <!-- EDIT TOOLBAR -->
 <div id="editBar">
   <button id="btnEdit" type="button" onclick="toggleEdit()">✏️ 编辑模式</button>
-  <button id="btnSave" type="button" onclick="saveHTML()">💾 保存HTML</button>
+  <button id="btnPush" type="button" onclick="publishGitHub()">🚀 发布到GitHub</button>
+  <button id="btnSave" type="button" onclick="saveLocal()">💾 存到本地</button>
   <button id="btnAdd" type="button" onclick="addSection()">➕ 添加模块</button>
   <button id="btnPic" type="button" onclick="changePhoto()">🖼 更换照片</button>
   <span id="editHint">点击"编辑模式"后：点文字直接改，悬停显示 ✕ 删除，虚线按钮新增</span>
@@ -443,14 +444,14 @@
       var r = new FileReader();
       r.onload = function () {
         document.querySelector('.photo').innerHTML = '<img src="' + r.result + '" alt="photo">';
-        hint('照片已更新，记得点"保存HTML"');
+        hint('照片已更新，记得点"🚀 发布到GitHub"');
       };
       r.readAsDataURL(f);
     };
     inp.click();
   };
 
-  window.saveHTML = function () {
+  window.saveLocal = function () {
     var was = editing;
     if (was) toggleEdit();
 
@@ -458,7 +459,7 @@
     var blob = new Blob([html], { type: 'text/html;charset=utf-8' });
 
     var finish = function () {
-      hint('已保存 ✓ 用下载/选择的文件覆盖原文件即可');
+      hint('已保存到本地 ✓ 需要更新线上请再点"🚀 发布到GitHub"');
       if (was) toggleEdit();
     };
 
@@ -477,6 +478,102 @@
     } else {
       fallbackDownload(blob, finish);
     }
+  };
+
+  // ===== 直接发布到 GitHub（Contents API，覆盖线上文件） =====
+  var GH = { repo: 'nbkaka22/CVPM', branch: 'main', key: 'gh_token_cvpm' };
+
+  function ghToken() { try { return localStorage.getItem(GH.key) || ''; } catch (e) { return ''; } }
+  function ghSaveToken(t) { try { localStorage.setItem(GH.key, t); } catch (e) {} }
+
+  function b64utf8(str) {
+    var bytes = new TextEncoder().encode(str), bin = '', CH = 0x8000;
+    for (var i = 0; i < bytes.length; i += CH) {
+      bin += String.fromCharCode.apply(null, bytes.subarray(i, i + CH));
+    }
+    return btoa(bin);
+  }
+
+  function ghFetch(method, path, body, token) {
+    var url = 'https://api.github.com/repos/' + GH.repo + '/contents/' + encodeURI(path);
+    if (method === 'GET') url += '?ref=' + GH.branch;
+    var opts = {
+      method: method,
+      headers: {
+        'Accept': 'application/vnd.github+json',
+        'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json'
+      }
+    };
+    if (body) opts.body = JSON.stringify(body);
+    return fetch(url, opts).then(function (r) {
+      return r.json().then(function (data) {
+        return { status: r.status, data: data };
+      }, function () {
+        return { status: r.status, data: null };
+      });
+    });
+  }
+
+  window.publishGitHub = function () {
+    var was = editing;
+    if (was) toggleEdit();
+    var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    var token = ghToken();
+
+    var proceed = function (tk) {
+      hint('正在发布到 GitHub…');
+      ghFetch('GET', FILENAME, null, tk).then(function (g) {
+        if (g.status === 401 || g.status === 403) {
+          ghSaveToken('');
+          alert('Token无效或权限不足，已清除。请重新点"🚀 发布到GitHub"并填入新Token。');
+          if (was) toggleEdit();
+          return;
+        }
+        var body = {
+          message: '在线编辑更新 ' + new Date().toLocaleString('zh-CN'),
+          content: b64utf8(html),
+          branch: GH.branch
+        };
+        if (g.status === 200 && g.data && g.data.sha) body.sha = g.data.sha;
+        return ghFetch('PUT', FILENAME, body, tk).then(function (p) {
+          if (p.status === 200 || p.status === 201) {
+            hint('🚀 已发布 ✓ 约1分钟后线上页面自动更新');
+          } else if (p.status === 409) {
+            return ghFetch('GET', FILENAME, null, tk).then(function (g2) {
+              if (g2.status === 200 && g2.data && g2.data.sha) body.sha = g2.data.sha;
+              return ghFetch('PUT', FILENAME, body, tk).then(function (p2) {
+                if (p2.status === 200 || p2.status === 201) hint('🚀 已发布 ✓（已自动处理版本冲突）');
+                else alert('发布失败 HTTP ' + p2.status + '：' + ((p2.data && p2.data.message) || ''));
+              });
+            });
+          } else if (p.status === 401 || p.status === 403) {
+            ghSaveToken('');
+            alert('Token无效或权限不足，已清除。请重新点"🚀 发布到GitHub"。');
+          } else {
+            var m = (p.data && p.data.message) ? '\n' + p.data.message : '';
+            alert('发布失败 HTTP ' + p.status + m);
+          }
+        });
+      }).catch(function (e) {
+        alert('发布出错：' + (e.message || e) + '\n\n可改用"💾 存到本地"，再手动上传到仓库。');
+      }).then(function () {
+        if (was) toggleEdit();
+      });
+    };
+
+    if (token) { proceed(token); return; }
+    var input = prompt(
+      '首次发布需要一个 GitHub Token（仅存于您浏览器本地）：\n\n' +
+      '1. 打开 github.com → 右上角头像 → Settings → Developer settings\n' +
+      '2. Personal access tokens → Fine-grained tokens → Generate new token\n' +
+      '3. Repository access 选 Only select repositories → 勾选 CVPM\n' +
+      '4. Permissions → Repository permissions → Contents 选 Read and write\n' +
+      '5. 生成后把 token 粘贴到下面：', '');
+    if (!input) { hint('未提供Token，未发布'); if (was) toggleEdit(); return; }
+    token = input.trim();
+    ghSaveToken(token);
+    proceed(token);
   };
 
   function fallbackDownload(blob, cb) {
