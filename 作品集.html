@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品集 — 产品设计与UI展示</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+  :root {
+    --ink: #1e293b; --accent: #2563eb; --accent-soft: #dbeafe;
+    --gold: #1d4ed8; --gold-soft: #e0e7ff;
+    --muted: #64748b; --light: #94a3b8;
+    --bg: #fafafa; --card: #ffffff; --border: #e2e8f0; --dark: #0f172a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter','Noto Sans SC',-apple-system,'PingFang SC','Microsoft YaHei',sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; font-size:15px; -webkit-font-smoothing:antialiased; }
+
+  nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); padding:14px 40px; display:flex; justify-content:space-between; align-items:center; }
+  nav .logo { font-size:18px; font-weight:700; color:var(--dark); letter-spacing:-0.5px; }
+  nav .logo span { color:var(--gold); }
+  nav .back { font-size:13px; color:var(--muted); text-decoration:none; display:flex; align-items:center; gap:4px; transition:color 0.2s; }
+  nav .back:hover { color:var(--ink); }
+
+  .hero { padding:60px 40px 40px; text-align:center; background:linear-gradient(180deg,#fff 0%,var(--bg) 100%); }
+  .hero h1 { font-size:36px; font-weight:700; letter-spacing:-1px; color:var(--dark); margin-bottom:8px; }
+  .hero p { font-size:16px; color:var(--muted); max-width:600px; margin:0 auto; }
+  .hero .line { width:40px; height:3px; background:var(--gold); margin:16px auto 0; border-radius:2px; }
+
+  .filters { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; padding:24px 40px 0; }
+  .filter-btn { padding:6px 18px; border:1.5px solid var(--border); border-radius:20px; font-size:13px; font-weight:500; color:var(--muted); background:#fff; cursor:pointer; transition:all 0.2s; }
+  .filter-btn:hover,.filter-btn.active { border-color:var(--gold); color:var(--ink); background:var(--gold-soft); }
+
+  .grid { max-width:1100px; margin:28px auto 60px; padding:0 40px; display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:24px; }
+
+  .card { background:var(--card); border-radius:12px; overflow:hidden; border:1px solid var(--border); transition:all 0.25s; }
+  .card:hover { box-shadow:0 8px 24px rgba(0,0,0,0.08); transform:translateY(-3px); }
+  .card-img { width:100%; aspect-ratio:16/10; background:var(--accent-soft); display:flex; align-items:center; justify-content:center; font-size:13px; color:var(--light); position:relative; overflow:hidden; }
+  .card-img .ph-icon { font-size:40px; color:var(--accent); opacity:0.3; }
+  .card-img .tag { position:absolute; top:12px; left:12px; padding:3px 10px; border-radius:4px; font-size:11px; font-weight:600; color:#fff; background:var(--accent); }
+  .card-img .tag.gold { background:var(--gold); }
+  .card-body { padding:18px 20px 20px; }
+  .card-body h3 { font-size:17px; font-weight:600; color:var(--dark); margin-bottom:6px; }
+  .card-body .desc { font-size:13px; color:var(--muted); line-height:1.5; margin-bottom:12px; }
+  .card-body .tags { display:flex; flex-wrap:wrap; gap:6px; }
+  .card-body .pill { font-size:11px; padding:2px 8px; border-radius:10px; background:var(--accent-soft); color:var(--accent); font-weight:500; }
+  .card-body .pill.gold { background:var(--gold-soft); color:#1d4ed8; }
+
+  footer { text-align:center; padding:20px; font-size:12px; color:var(--light); border-top:1px solid var(--border); background:#fff; }
+
+  @media(max-width:768px){
+    .hero{padding:40px 20px 24px;} .hero h1{font-size:28px;}
+    .grid{padding:0 16px;grid-template-columns:1fr;} nav{padding:12px 16px;} .filters{padding:16px 16px 0;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">作品集<span>.</span></div>
+  <a href="简历-photo-corporate.html" class="back">← 返回简历</a>
+</nav>
+
+<div class="hero">
+  <h1>产品设计与UI展示</h1>
+  <p>17年互联网产品经验 — 覆盖数据分析、游戏平台、家装电商、应用分发等多领域代表性产品作品</p>
+  <div class="line"></div>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="filter('all')">全部</button>
+  <button class="filter-btn" onclick="filter('data')">数据分析</button>
+  <button class="filter-btn" onclick="filter('game')">游戏平台</button>
+  <button class="filter-btn" onclick="filter('ecom')">家装/电商</button>
+  <button class="filter-btn" onclick="filter('tool')">工具/SaaS</button>
+</div>
+
+<div class="grid">
+
+  <div class="card" data-cat="data">
+    <div class="card-img"><span class="ph-icon">📊</span><span class="tag">数据分析</span></div>
+    <div class="card-body">
+      <h3>数据邦</h3>
+      <div class="desc">覆盖App Store与Google Play双商店的移动应用市场数据分析SaaS平台，提供ASO优化、竞品分析、Apple Ads追踪等核心能力。</div>
+      <div class="tags"><span class="pill">ASO优化</span><span class="pill">竞品分析</span><span class="pill">SaaS</span><span class="pill gold">Apple/Google</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="game">
+    <div class="card-img"><span class="ph-icon">🎮</span><span class="tag gold">游戏平台</span></div>
+    <div class="card-body">
+      <h3>Acorn Game</h3>
+      <div class="desc">移动端竞技能游戏平台，支持1v1/锦标赛/Bracket淘汰赛，ELO公平匹配，现金与实物奖励，完整的竞技游戏生态。</div>
+      <div class="tags"><span class="pill">竞技对战</span><span class="pill">ELO匹配</span><span class="pill">现金奖励</span><span class="pill gold">SDK接入</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ecom">
+    <div class="card-img"><span class="ph-icon">🏠</span><span class="tag">家装/电商</span></div>
+    <div class="card-body">
+      <h3>新途网</h3>
+      <div class="desc">面向C端业主与B端设计师/品牌商的在线3D云设计+家装电商一体化平台，从户型绘制到商品选购一站式解决。</div>
+      <div class="tags"><span class="pill">3D云设计</span><span class="pill">家装电商</span><span class="pill">B端/设计师</span><span class="pill gold">渲染引擎</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="tool">
+    <div class="card-img"><span class="ph-icon">🎁</span><span class="tag">工具/SaaS</span></div>
+    <div class="card-body">
+      <h3>积分墙</h3>
+      <div class="desc">移动端应用推广平台，用户通过下载/注册推荐App赚取积分，为广告主提供CPI/CPA获客渠道，含反作弊风控。</div>
+      <div class="tags"><span class="pill">CPI/CPA</span><span class="pill">积分体系</span><span class="pill">反作弊</span><span class="pill gold">ROI看板</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="tool">
+    <div class="card-img"><span class="ph-icon">🏷</span><span class="tag">工具/SaaS</span></div>
+    <div class="card-body">
+      <h3>Acorn Coupon</h3>
+      <div class="desc">优惠券聚合分发与导购平台，一键领取+多平台比价+智能导购，商家入驻与佣金结算一体化。</div>
+      <div class="tags"><span class="pill">优惠券分发</span><span class="pill">比价导购</span><span class="pill">CPS/CPC</span><span class="pill gold">商家入驻</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="game">
+    <div class="card-img"><span class="ph-icon">🕹</span><span class="tag gold">游戏平台</span></div>
+    <div class="card-body">
+      <h3>POPGAME 官网</h3>
+      <div class="desc">游戏源码交易平台，含企业展示/CMS内容管理/在线购买/招聘模块，面向游戏开发者与创业者。</div>
+      <div class="tags"><span class="pill">源码交易</span><span class="pill">CMS管理</span><span class="pill">在线支付</span><span class="pill gold">企业展示</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="tool">
+    <div class="card-img"><span class="ph-icon">🔷</span><span class="tag">工具/SaaS</span></div>
+    <div class="card-body">
+      <h3>产品矩阵</h3>
+      <div class="desc">8类应用+23款游戏的全球化移动产品矩阵，通过矩阵化运营实现流量互导与规模化变现。</div>
+      <div class="tags"><span class="pill">应用矩阵</span><span class="pill">游戏矩阵</span><span class="pill">流量互导</span><span class="pill gold">全球化</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="game">
+    <div class="card-img"><span class="ph-icon">🕹</span><span class="tag gold">游戏平台</span></div>
+    <div class="card-body">
+      <h3>游戏联运平台</h3>
+      <div class="desc">经典网页游戏联运平台+联运管理后台，含多渠道管理/财务对账/充值对账/合同管理等完整联运体系。</div>
+      <div class="tags"><span class="pill">页游联运</span><span class="pill">渠道管理</span><span class="pill">财务对账</span><span class="pill gold">SID穿透</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="tool">
+    <div class="card-img"><span class="ph-icon">💬</span><span class="tag">工具/SaaS</span></div>
+    <div class="card-body">
+      <h3>ToB微信开发框架</h3>
+      <div class="desc">企业微信公众号/小程序快速开发SaaS平台，营销组件即插即用，多租户OEM部署，开放API对接。</div>
+      <div class="tags"><span class="pill">公众号/小程序</span><span class="pill">营销组件</span><span class="pill">多租户</span><span class="pill gold">OEM</span></div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="game">
+    <div class="card-img"><span class="ph-icon">⚔</span><span class="tag gold">游戏平台</span></div>
+    <div class="card-body">
+      <h3>MMORPG游戏官网 + 客服系统</h3>
+      <div class="desc">大型端游官方网站，含品牌展示/充值/社区；配套在线客服系统，工单流转/智能路由/知识库。</div>
+      <div class="tags"><span class="pill">品牌官网</span><span class="pill">充值系统</span><span class="pill">客服/工单</span><span class="pill gold">智能路由</span></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>作品集 · 产品总监简历 — <a href="简历-photo-corporate.html" style="color:var(--accent)">返回简历</a></footer>
+
+<script>
+function filter(cat) {
+  document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+  event.target.classList.add('active');
+  document.querySelectorAll('.card').forEach(function(c){
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
