@@ -143,456 +143,10 @@
     #editBar, .del-btn, .add-btn { display: none !important; }
   }
 </style>
-<script charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/btype.js"></script><script type="text/javascript" charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/chrome.js"></script><style type="text/css">.gwd-row {
-  display: flex;
-  flex-direction: row;
-}
-.gwd-inline-row {
-  display: inline-flex;
-  flex-direction: row;
-}
-.gwd-column {
-  display: flex;
-  flex-direction: column;
-}
-.gwd-inline-column {
-  display: inline-flex;
-  flex-direction: column;
-}
-.gwd-align {
-  align-content: center;
-  align-items: center;
-}
-.gwd-jcc {
-  justify-content: center;
-}
-.gwd-jic {
-  justify-items: center;
-}
-.gwd-button {
-  outline: none;
-  border: none;
-}
-.bjg-bar-button {
-  font-size: 0;
-}
-.bjg-hover-bg {
-  background: #fffbef;
-}
-.bjg-bar-button:hover {
-  background: #fffbef;
-  cursor: pointer;
-}
-.bjg-bar-button:hover .bjg-window {
-  display: block;
-}
-.mainbar-fold .bjg-bar-button,
-.mainbar-fold #top_coupon_btn,
-.mainbar-fold .rinfo-btn,
-.mainbar-fold .gwd-bottom-tmall {
-  display: none!important;
-}
-.gwd-font12 {
-  font-size: 12px;
-}
-.gwd-font14 {
-  font-size: 14px;
-}
-.gwd-red {
-  color: #ff3532;
-}
-.gwd-red-bg {
-  background: #ff3532;
-}
-.gwd-hui333 {
-  color: #333333;
-}
-.gwd-hui999 {
-  color: #999999;
-}
-.gwd-font10 {
-  font-size: 12px;
-  transform: scale(0.8333);
-  transform-origin: bottom center;
-}
-.gwd-font11 {
-  font-size: 12px;
-  transform: scale(0.91666);
-  transform-origin: bottom center;
-}
-.gwd-font9 {
-  font-size: 12px;
-  transform: scale(0.75);
-  transform-origin: bottom center;
-}
-.gwd-hoverable:hover {
-  background: #edf1f2;
-}
-.right-info > * {
-  border-left: 1px solid #edf1f2;
-}
-.gwd-red-after-visit:hover {
-  color: #e03024 !important;
-}
-.gwd-button:hover {
-  filter: brightness(1.1);
-}
-.gwd-button {
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
-.gwd-button:active {
-  filter: brightness(0.9);
-}
-.gwd-fadeout-5s {
-  opacity: 0;
-  transition: opacity 5s;
-}
-.gwd-scrollbar::-webkit-scrollbar {
-  width: 6px;
-  border-radius: 17px;
-}
-.gwd-scrollbar::-webkit-scrollbar-thumb {
-  border-radius: 17px;
-  background: #999;
-}
-#gwdang_main,
-.gwdang-main,
-.bjgext-detail {
-  font-size: 12px;
-}
-#gwdang_main button,
-.gwdang-main button,
-.bjgext-detail button {
-  text-align: center;
-}
-.gwd-width-100 {
-  width: 100%;
-}
-.gwd-overlay {
-  font-family: "Microsoft YaHei", "Arial", "SimSun", serif;
-  font-size: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 999999999;
-}
-.gwd-font-pfm {
-  font-family: 'PingFangSC-Medium';
-  font-weight: normal!important;
-}
-@font-face {
-  font-family: 'PingFangSC-Medium';
-  src: local('PingFangSC-Medium');
-}
-.gwd-font-pfm {
-  font-family: local('PingFangSC-Medium'), system-ui;
-  font-weight: bold;
-}
-#gwd_minibar svg,
-.gwdang-main svg,
-#bjgext_mb_bg svg,
-#bjgext_mainbar svg {
-  fill: transparent;
-}
-.gwd-common-font {
-  font-family: 'PingFang SC', 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', 'Hiragino Sans GB', 'WenQuanYi Micro Hei';
-}
-</style><style type="text/css">.gwd-row[data-v-07d1070f] {
-  display: flex;
-  flex-direction: row;
-}
-.gwd-inline-row[data-v-07d1070f] {
-  display: inline-flex;
-  flex-direction: row;
-}
-.gwd-column[data-v-07d1070f] {
-  display: flex;
-  flex-direction: column;
-}
-.gwd-inline-column[data-v-07d1070f] {
-  display: inline-flex;
-  flex-direction: column;
-}
-.gwd-align[data-v-07d1070f] {
-  align-content: center;
-  align-items: center;
-}
-.gwd-jcc[data-v-07d1070f] {
-  justify-content: center;
-}
-.gwd-jic[data-v-07d1070f] {
-  justify-items: center;
-}
-.gwd-button[data-v-07d1070f] {
-  outline: none;
-  border: none;
-}
-.bjg-bar-button[data-v-07d1070f] {
-  font-size: 0;
-}
-.bjg-hover-bg[data-v-07d1070f] {
-  background: #fffbef;
-}
-.bjg-bar-button[data-v-07d1070f]:hover {
-  background: #fffbef;
-  cursor: pointer;
-}
-.bjg-bar-button:hover .bjg-window[data-v-07d1070f] {
-  display: block;
-}
-.mainbar-fold .bjg-bar-button[data-v-07d1070f],
-.mainbar-fold #top_coupon_btn[data-v-07d1070f],
-.mainbar-fold .rinfo-btn[data-v-07d1070f],
-.mainbar-fold .gwd-bottom-tmall[data-v-07d1070f] {
-  display: none!important;
-}
-.gwd-font12[data-v-07d1070f] {
-  font-size: 12px;
-}
-.gwd-font14[data-v-07d1070f] {
-  font-size: 14px;
-}
-.gwd-red[data-v-07d1070f] {
-  color: #ff3532;
-}
-.gwd-red-bg[data-v-07d1070f] {
-  background: #ff3532;
-}
-.gwd-hui333[data-v-07d1070f] {
-  color: #333333;
-}
-.gwd-hui999[data-v-07d1070f] {
-  color: #999999;
-}
-.gwd-font10[data-v-07d1070f] {
-  font-size: 12px;
-  transform: scale(0.8333);
-  transform-origin: bottom center;
-}
-.gwd-font11[data-v-07d1070f] {
-  font-size: 12px;
-  transform: scale(0.91666);
-  transform-origin: bottom center;
-}
-.gwd-font9[data-v-07d1070f] {
-  font-size: 12px;
-  transform: scale(0.75);
-  transform-origin: bottom center;
-}
-.gwd-hoverable[data-v-07d1070f]:hover {
-  background: #edf1f2;
-}
-.right-info > *[data-v-07d1070f] {
-  border-left: 1px solid #edf1f2;
-}
-.gwd-red-after-visit[data-v-07d1070f]:hover {
-  color: #e03024 !important;
-}
-.gwd-button[data-v-07d1070f]:hover {
-  filter: brightness(1.1);
-}
-.gwd-button[data-v-07d1070f] {
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
-.gwd-button[data-v-07d1070f]:active {
-  filter: brightness(0.9);
-}
-.gwd-fadeout-5s[data-v-07d1070f] {
-  opacity: 0;
-  transition: opacity 5s;
-}
-.gwd-scrollbar[data-v-07d1070f]::-webkit-scrollbar {
-  width: 6px;
-  border-radius: 17px;
-}
-.gwd-scrollbar[data-v-07d1070f]::-webkit-scrollbar-thumb {
-  border-radius: 17px;
-  background: #999;
-}
-#gwdang_main[data-v-07d1070f],
-.gwdang-main[data-v-07d1070f],
-.bjgext-detail[data-v-07d1070f] {
-  font-size: 12px;
-}
-#gwdang_main button[data-v-07d1070f],
-.gwdang-main button[data-v-07d1070f],
-.bjgext-detail button[data-v-07d1070f] {
-  text-align: center;
-}
-.gwd-width-100[data-v-07d1070f] {
-  width: 100%;
-}
-.gwd-overlay[data-v-07d1070f] {
-  font-family: "Microsoft YaHei", "Arial", "SimSun", serif;
-  font-size: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 999999999;
-}
-.gwd-font-pfm[data-v-07d1070f] {
-  font-family: 'PingFangSC-Medium';
-  font-weight: normal!important;
-}
-@font-face {
-  font-family: 'PingFangSC-Medium';
-  src: local('PingFangSC-Medium');
-}
-.gwd-font-pfm[data-v-07d1070f] {
-  font-family: local('PingFangSC-Medium'), system-ui;
-  font-weight: bold;
-}
-#gwd_minibar svg[data-v-07d1070f],
-.gwdang-main svg[data-v-07d1070f],
-#bjgext_mb_bg svg[data-v-07d1070f],
-#bjgext_mainbar svg[data-v-07d1070f] {
-  fill: transparent;
-}
-.gwd-common-font[data-v-07d1070f] {
-  font-family: 'PingFang SC', 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', 'Hiragino Sans GB', 'WenQuanYi Micro Hei';
-}
-.gwd-taobao[data-v-07d1070f] {
-  margin-top: 20px;
-}
-.gwd-taobao span[data-v-07d1070f] {
-  color: #ff4400;
-}
-.gwd-jd[data-v-07d1070f] {
-  margin-top: 20px;
-}
-.gwd-jd span[data-v-07d1070f] {
-  color: #e2231a;
-}
-a[data-v-07d1070f] {
-  white-space: nowrap;
-  position: relative;
-  height: 24px;
-  font-family: 'Microsoft YaHei';
-}
-a[data-v-07d1070f]:hover {
-  text-decoration: none;
-  cursor: pointer;
-}
-a:hover .gwd-tooltip[data-v-07d1070f] {
-  display: block;
-}
-.gwd-coupon[data-v-07d1070f] {
-  height: 24px;
-  box-sizing: border-box;
-  min-width: 106px;
-}
-.gwd-coupon[data-v-07d1070f] {
-  background-size: contain;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-.gwd-coupon[data-v-07d1070f]:before,
-.gwd-coupon[data-v-07d1070f]:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 9px;
-  background-size: contain;
-}
-.gwd-coupon[data-v-07d1070f]:before {
-  left: 0;
-}
-.gwd-coupon[data-v-07d1070f]:after {
-  right: 0;
-  transform: rotate(180deg);
-}
-.gwd-coupon.gwd-taobao[data-v-07d1070f] {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAA0CAYAAAAjfRLqAAAAAXNSR0IArs4c6QAAAU5JREFUeF7tlNENgDAQhdrd3H+lc4cmGgX8r5YHca+eFgAtsOdaA+IJRb5AQcsDoOHvmekPTbMq5ilosXwiekETrYqZClosn4he0ESrYqaCFssnohc00aqYqaDF8onoBU20KmYqaLF8InpBE62KmQpaLJ+IXtBEq2KmghbLJ6IXNNGqmKmgxfKJ6AVNtCpmKmixfCJ6QROtipkKWiyfiF7QRKtipoIWyyeiFzTRqpipoMXyiegFTbQqZiposXwiekETrYqZClosn4he0ESrYqaCFssnohc00aqYqaDF8onoBU20KmYqaLF8InpBE62KmQpaLJ+IXtBEq2KmghbLJ6IXNNGqmKmgxfKJ6AVNtCpmKmixfCJ6QROtipkKWiyfiF7QRKtipoL+m/yZv9341fvuuVYLvTp5H3tygYJ+ct3zd/eTOdxuH57rWAt8coEbbyjDgopRg1YAAAAASUVORK5CYII=);
-}
-.gwd-coupon.gwd-taobao[data-v-07d1070f]:before,
-.gwd-coupon.gwd-taobao[data-v-07d1070f]:after {
-  background-repeat: no-repeat;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAA0CAYAAACHO2h8AAAAAXNSR0IArs4c6QAAAZJJREFUSEvtlz9OAkEUh79NsNJiOy038QDuEUggxM6INWCrDRRSwwE0UtqtiR7A3mKPwBH2CF7AZM2bAeJkIeyb3U004TU0w5f3Z37vNxtQUwTCybvkVXkNgT79E3MzumjDQwJnkbrSYmknITymcB6rYAZkGt4m4og5OSMkM4EpYgNawUJaZEDIewan5Ut0QKurIKm0TUaSWcnYBloCcSVQ3mFMwMKUJKUpwk6tQ0KANMTWMn2F3kiBAXf8xyEMZ9CfqCBy2AV9fIHAPMIF1SYR5ch/J16UiPTn7lld3Bok0ogIuDK3ejiHwUwFcyXSNeNPEeG+ZZjfkrH7Zr8sVRugGa3ll0R8I1rzU7/ZRS0jERlXTO8WpknJ7thjxfGLYJ9S1S4qgmTkNxMvmTQkkdq0drCjbResGYmsfO0v2pFsSKWTFLUmdjSYqwT7H+xI9rTHa237PqrJjuzL4X4B12NVww92tL9d9maLHYmXtRAPir2fx85HTS121B9bsSre1+uiG7Kj/T3deaLe77UKiWz++gOA98aFVwFZGwAAAABJRU5ErkJggg==);
-}
-.gwd-coupon.gwd-taobao[data-v-07d1070f]:hover {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAA0CAYAAAAjfRLqAAAAAXNSR0IArs4c6QAAAVNJREFUeF7tlMENgzAUxZLd2H+NXrvB7w6RQMU290D8bLFXTwuAFthzrQHxhCJfoKDlAdDw93w//aFpVsU8BS2WT0QvaKJVMVNBi+UT0QuaaFXMVNBi+UT0giZaFTMVtFg+Eb2giVbFTAUtlk9EL2iiVTFTQYvlE9ELmmhVzFTQYvlE9IImWhUzFbRYPhG9oIlWxUwFLZZPRC9oolUxU0GL5RPRC5poVcxU0GL5RPSCJloVMxW0WD4RvaCJVsVMBS2WT0QvaKJVMVNBi+UT0QuaaFXMVNBi+UT0giZaFTMVtFg+Eb2giVbFTAUtlk9EL2iiVTFTQYvlE9ELmmhVzFTQYvlE9IImWhUzFbRYPhG9oIlWxUwFLZZPRC9oolUxU0GL5RPRC5poVcxU0G+TP/O2Gz963z3XaqFHJ+9jdy5Q0Heue/7ufjKH2+3Dcx1rgb9c4AdcEryACPINxAAAAABJRU5ErkJggg==);
-}
-.gwd-coupon.gwd-taobao[data-v-07d1070f]:hover:before,
-.gwd-coupon.gwd-taobao[data-v-07d1070f]:hover:after {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAA0CAYAAACHO2h8AAAAAXNSR0IArs4c6QAAAYtJREFUSEvtl79Kw2AUxX+BuCiULroVstfBVadIOwgd3NqxOOii4GAfwDoLdqpjcVdfwKF7HZydHH0JIXJvk+pHWujNH6nQC9mSk/Pde849iUdB5QlO1CTKi1cS0ONnZmIuo/oBnA9gp2YGTB9tqwL9Jwh2TWAKpA0PCdjgmoguwkzADDUDisGq+HwAVYYT0xEdoFgKYyBURsJsyZoH9Abs5QKKGlziMWC7BveTJblMb5tOrcEIj0CPJCUSOOxkAEosslmBTg9apyaQH0YJ0MM7iI4ylCvIwixiHPlv4mmLSH9ObsyHS4DEGgEex6rq9hW0eyYw1yJNHf9YGz58NTV+sbJvX0wboByvRUcEfCFey+Z+3UW+WuRODRt24GJgb7aTImJY0ZNx3bo6krG3zkzTSmiXZJHCvLaOo3kCK8cica6tYhzJhjQmSXrVZtiO/yGOjJ8yfxJHXX1L1qklFKN1HC10v8aRZJnPSOOovg/951WIIzGqXMZMS3utsBQxdcW9udj/tRxEZo9+AyVqv4MZSS3ZAAAAAElFTkSuQmCC);
-}
-.gwd-coupon.gwd-jd[data-v-07d1070f] {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKoAAAAsCAYAAAD1nyNHAAAAAXNSR0IArs4c6QAAAR1JREFUeF7tnbERgFAMhcz+2+k0VnGF33kcWFvwAmfrXD1dAHCBee9nAZwhyi9QqPIAKPNnd/uiUmyJOQtVLJ80vVBJtsSshSqWT5peqCRbYtZCFcsnTS9Uki0xa6GK5ZOmFyrJlpi1UMXySdMLlWRLzFqoYvmk6YVKsiVmLVSxfNL0QiXZErMWqlg+aXqhkmyJWQtVLJ80vVBJtsSshSqWT5peqCRbYtZCFcsnTS9Uki0xa6GK5ZOmFyrJlpi1UMXySdMLlWRLzFqoYvmk6YVKsiVmLVSxfNL0QiXZErMWqlg+aXqhkmyJWQtVLJ80vVBJtsSshSqWT5peqCRbYtZCFcsnTe/3PSRbYtZC/V9+v086cDAH7/RKF/j9Ah900KcI8oZhhwAAAABJRU5ErkJggg==);
-}
-.gwd-coupon.gwd-jd[data-v-07d1070f]:before,
-.gwd-coupon.gwd-jd[data-v-07d1070f]:after {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAsCAYAAABovuiKAAAAAXNSR0IArs4c6QAAAdVJREFUSEvNVlFO20AQfbOzayEhUUepgkIicFBKCmoljpAb0CNwA7gBuUG4AUfhCCvb6jdH4DPFldhqXCWya/Exi5G6n5b9/ObNmzdL6OmQ4LwUZXgv3scAudMZaH8/ilyHEX8egsdjNVgNtMnzFUCZAa5AlPJoBD4cqcBqoO3Z+HJpGI+UOLjFIh6o2cHk+7d4oMr7y8DWwzkkXyMYbYrimog+UcAKQCr6iE6a0+matF9soD0tIHs6g+nDR1qBm6xbjMwgrbWhJNFWhq5GiYOdzdRgO0NuvM+Y7UMAljGCt5wdvE8rts9gRnJxriqvBdSbs3+XP+9ew+squrSqKB8DKANCJqz45Bh8cKAvbRe1xoAnR+A0VYHIy63292ZItzhT+2dLvRu1Eem4K60qigeJWjGjPLTTCcxgoNKp5aNfeX5LZNbR7W/+ettBrfD/hL/PDNun6BGRgQWQsXXrEMKlxImdTvUatXa/c3XUajOp1X4JfTMcgphVbD7O2TH+edPZsq7tfK4u7+8lQnY+QgqDNYiyd18idiv7v4naKi9vAuGe9vbgvsxVFqg1kukPIInFH3XUTifgmOlvOjvmJtIxpLs4V7f9TR+phGm83O89O5ZF87s/IaG3Cf8Fdl8AAAAASUVORK5CYII=);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.gwd-coupon.gwd-jd[data-v-07d1070f]:hover {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKoAAAAsCAYAAAD1nyNHAAAAAXNSR0IArs4c6QAAAR9JREFUeF7tnbENgFAQhbz9t9NdTGzUFX73Q8DagncQW+fo6QKAC8xzXh+AM0T5BQpVHgBl/rz33ReVYkvMWahi+aTphUqyJWYtVLF80vRCJdkSsxaqWD5peqGSbIlZC1UsnzS9UEm2xKyFKpZPml6oJFti1kIVyydNL1SSLTFroYrlk6YXKsmWmLVQxfJJ0wuVZEvMWqhi+aTphUqyJWYtVLF80vRCJdkSsxaqWD5peqGSbIlZC1UsnzS9UEm2xKyFKpZPml6oJFti1kIVyydNL1SSLTFroYrlk6YXKsmWmLVQxfJJ0wuVZEvMWqhi+aTphUqyJWYtVLF80vRCJdkSsxaqWD5per/vIdkSsxbqfvn9PmnBwSy80ytdYPsFfqOApDYolPr+AAAAAElFTkSuQmCC);
-}
-.gwd-coupon.gwd-jd[data-v-07d1070f]:hover:before,
-.gwd-coupon.gwd-jd[data-v-07d1070f]:hover:after {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAsCAYAAABovuiKAAAAAXNSR0IArs4c6QAAAclJREFUSEvNlttNw0AQRe/MrgURChgThUeAmEcBKSEdQAl0AB2QDkIHlEIJlm3xTQl8BoyURePIkY3Fx6yDxPxFcq5m75x5EDYUJDqfWe666v2NkBmdgHs9r+RaGXEYwgwO1GKl0CJNZwDFDNyAKORoHyaKVGKlUBWLJJ+ywQtZCxuP/YXqFQyur/yFiiSZOGMTWIvAJ6NFlt0R0R45zAD4e1QHknrbsKOR6lnycaP8dnQC2gRHWoPraTcy4n4fwhAFQbenlW+1FtIqWrE1kIskiY2xzw6Yik/ilyYaZLskCQtj38GM4PJCo7OqWj0qFLTGN4S+8tfHpVvOfFgqhYosf3GgGHCx/DbHR+CdHf3T1mQzwwwG4N2+SqRFttaXX4G043M1P5VYe9RGEUy07/e0IsueZdQKjKXZw6Hap0b5P9L0gYjnncne2KiVfmNj37xbRAQAxMYGc+fcRMaJORyqDG+vbFlFvmOkIlvKTmEIYlZl83dk+/DzK9nluj4/g1ROE6sjQnY+XAjGHERx5yNivbL/zagt0vzeEZ5oawv27FRj0Wr4S/c7UAjgtlP3148IH6PbR8TlhRfVLSGVKT8+3uyd3SWT6r/fRdq0N2b1Td4AAAAASUVORK5CYII=);
-}
-.gwd-redpack[data-v-07d1070f] {
-  padding-right: 5px;
-  padding-left: 8px;
-  background: white;
-}
-.gwd-redpack.gwd-taobao[data-v-07d1070f] {
-  border: 1px solid #ff4400;
-}
-.gwd-redpack.gwd-taobao[data-v-07d1070f]:hover {
-  background: #fff0e7;
-}
-.gwd-redpack.gwd-jd[data-v-07d1070f] {
-  border: 1px solid #f9d2d3;
-}
-.gwd-redpack.gwd-jd[data-v-07d1070f]:hover {
-  background: #fff0e7;
-}
-.gwd-tooltip[data-v-07d1070f] {
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 22px;
-  line-height: 22px;
-  text-align: center;
-  z-index: 1;
-  color: #3c3c3c;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  display: none;
-  background: white;
-  border-radius: 2px;
-}
-.gwd-tooltip span[data-v-07d1070f] {
-  color: #3c3c3c;
-}
-.gwd-tooltip[data-v-07d1070f]:after {
-  /* a triangle at bottom */
-  content: " ";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent white transparent;
-  transform: rotate(180deg);
-}
-</style><style type="text/css">button[data-v-18c26280]:focus{outline:0}.TransIcon[data-v-18c26280]{position:fixed !important;transition:all .2s linear;animation:fadeIn-18c26280 .2s linear;z-index:999999999999999;filter:unset;width:34px;height:34px;border-radius:11px;border:1px solid #f1f1f1;overflow:hidden}.TransIcon img[data-v-18c26280]{width:32px;height:32px;object-fit:cover;pointer-events:none}.TransIcon[data-v-18c26280]:hover{cursor:pointer}.TransDialog[data-v-18c26280]{position:fixed !important;animation:fadeIn-18c26280 .2s linear;background:#fff;border-radius:16px;border:1px solid #f1f1f1;box-shadow:0px 8px 40px 0px rgba(0,0,0,.1);overflow:hidden;z-index:999999999999999}.TransDialog .dragBlock[data-v-18c26280]{position:absolute;top:0;left:0;right:0}.TransDialog .dragBlock[data-v-18c26280]:hover{cursor:move}.TransDialog .dragBlock .top-drap-block[data-v-18c26280],.TransDialog .dragBlock .left-drap-block[data-v-18c26280]{position:absolute;left:0}.TransDialog .dragBlock .top-drap-block[data-v-18c26280]{right:0;height:15px}.TransDialog .dragBlock .left-drap-block[data-v-18c26280]{height:55px;right:120px}.TransDialog .dragBlock.preview .left-drap-block[data-v-18c26280]{width:20px;height:79px;right:160px}.TransDialog .dragBlock.scale .left-drap-block[data-v-18c26280]{right:53px;left:177px;height:40px}.MOJiWebExtensionpanelObject[data-v-18c26280]{height:100%;width:calc(100% + 5px);border:none;overflow:hidden;z-index:999999999999999}@keyframes fadeIn-18c26280{from{opacity:0}to{opacity:1}}
+<style type="text/css">button[data-v-18c26280]:focus{outline:0}.TransIcon[data-v-18c26280]{position:fixed !important;transition:all .2s linear;animation:fadeIn-18c26280 .2s linear;z-index:999999999999999;filter:unset;width:34px;height:34px;border-radius:11px;border:1px solid #f1f1f1;overflow:hidden}.TransIcon img[data-v-18c26280]{width:32px;height:32px;object-fit:cover;pointer-events:none}.TransIcon[data-v-18c26280]:hover{cursor:pointer}.TransDialog[data-v-18c26280]{position:fixed !important;animation:fadeIn-18c26280 .2s linear;background:#fff;border-radius:16px;border:1px solid #f1f1f1;box-shadow:0px 8px 40px 0px rgba(0,0,0,.1);overflow:hidden;z-index:999999999999999}.TransDialog .dragBlock[data-v-18c26280]{position:absolute;top:0;left:0;right:0}.TransDialog .dragBlock[data-v-18c26280]:hover{cursor:move}.TransDialog .dragBlock .top-drap-block[data-v-18c26280],.TransDialog .dragBlock .left-drap-block[data-v-18c26280]{position:absolute;left:0}.TransDialog .dragBlock .top-drap-block[data-v-18c26280]{right:0;height:15px}.TransDialog .dragBlock .left-drap-block[data-v-18c26280]{height:55px;right:120px}.TransDialog .dragBlock.preview .left-drap-block[data-v-18c26280]{width:20px;height:79px;right:160px}.TransDialog .dragBlock.scale .left-drap-block[data-v-18c26280]{right:53px;left:177px;height:40px}.MOJiWebExtensionpanelObject[data-v-18c26280]{height:100%;width:calc(100% + 5px);border:none;overflow:hidden;z-index:999999999999999}@keyframes fadeIn-18c26280{from{opacity:0}to{opacity:1}}
 /*# sourceURL=webpack://src/components/TransDialog/App.vue */
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy9UcmFuc0RpYWxvZy9BcHAudnVlIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdBLDhCQUNFLFNBQUEsQ0FHRiw0QkFDRSx5QkFBQSxDQUNBLHlCQUFBLENBQ0Esb0NBQUEsQ0FHQSx1QkFYZSxDQVlmLFlBQUEsQ0FDQSxVQUFBLENBQ0EsV0FBQSxDQUNBLGtCQUFBLENBQ0Esd0JBQUEsQ0FDQSxlQUFBLENBQ0EsZ0NBQ0UsVUFBQSxDQUNBLFdBQUEsQ0FDQSxnQkFBQSxDQUNBLG1CQUFBLENBSUosa0NBQ0UsY0FBQSxDQUdGLDhCQUNFLHlCQUFBLENBRUEsb0NBQUEsQ0FHQSxlQUFBLENBQ0Esa0JBQUEsQ0FDQSx3QkFBQSxDQUVBLDBDQUFBLENBQ0EsZUFBQSxDQUNBLHVCQTFDZSxDQTJDZix5Q0FDRSxpQkFBQSxDQUNBLEtBQUEsQ0FDQSxNQUFBLENBQ0EsT0FBQSxDQUdBLCtDQUNFLFdBQUEsQ0FHRixtSEFDRSxpQkFBQSxDQUNBLE1BQUEsQ0FHRix5REFDRSxPQUFBLENBQ0EsV0FBQSxDQUVGLDBEQUNFLFdBQUEsQ0FDQSxXQUFBLENBS0Esa0VBQ0UsVUFBQSxDQUNBLFdBQUEsQ0FDQSxXQUFBLENBTUYsZ0VBQ0UsVUFBQSxDQUNBLFVBQUEsQ0FDQSxXQUFBLENBTVIsOENBQ0UsV0FBQSxDQUNBLHNCQUFBLENBQ0EsV0FBQSxDQUNBLGVBQUEsQ0FFQSx1QkE5RmUsQ0FxR2pCLDJCQUNFLEtBQ0UsU0FBQSxDQUVGLEdBQ0UsU0FBQSxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnQC9zY3NzL3ZhcmlhYmxlcy5zY3NzJztcblxyXG4kZGlhbG9nLXotaW5kZXg6IDk5OTk5OTk5OTk5OTk5OTtcclxuYnV0dG9uOmZvY3VzIHtcclxuICBvdXRsaW5lOiAwO1xyXG59XHJcblxyXG4uVHJhbnNJY29uIHtcclxuICBwb3NpdGlvbjogZml4ZWQgIWltcG9ydGFudDtcclxuICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBsaW5lYXI7XHJcbiAgYW5pbWF0aW9uOiBmYWRlSW4gMC4ycyBsaW5lYXI7XHJcbiAgLy8gd2lkdGg6IDI0cHg7XHJcbiAgLy8gaGVpZ2h0OiAyNHB4O1xyXG4gIHotaW5kZXg6ICRkaWFsb2ctei1pbmRleDtcclxuICBmaWx0ZXI6IHVuc2V0O1xyXG4gIHdpZHRoOiAzNHB4O1xyXG4gIGhlaWdodDogMzRweDtcclxuICBib3JkZXItcmFkaXVzOiAxMXB4O1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICNGMUYxRjE7XHJcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICBpbWcge1xyXG4gICAgd2lkdGg6IDMycHg7XHJcbiAgICBoZWlnaHQ6IDMycHg7XHJcbiAgICBvYmplY3QtZml0OiBjb3ZlcjtcclxuICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG4gIH1cclxufVxyXG5cclxuLlRyYW5zSWNvbjpob3ZlciB7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4uVHJhbnNEaWFsb2cge1xyXG4gIHBvc2l0aW9uOiBmaXhlZCAhaW1wb3J0YW50O1xyXG4gIC8vIHRyYW5zaXRpb246IGFsbCAwLjJzIGxpbmVhcjtcclxuICBhbmltYXRpb246IGZhZGVJbiAwLjJzIGxpbmVhcjtcclxuICAvLyB3aWR0aDogMzkycHg7XHJcbiAgLy8gaGVpZ2h0OiA0NDhweDtcclxuICBiYWNrZ3JvdW5kOiAjZmZmZmZmO1xyXG4gIGJvcmRlci1yYWRpdXM6IDE2cHg7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgI2YxZjFmMTtcclxuICAvLyBvdmVyZmxvdzogYXV0bztcclxuICBib3gtc2hhZG93OiAwcHggOHB4IDQwcHggMHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIHotaW5kZXg6ICRkaWFsb2ctei1pbmRleDtcclxuICAuZHJhZ0Jsb2NrIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDowO1xyXG4gICAgbGVmdDogMDtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgLy8gaGVpZ2h0OiA2MHB4O1xyXG5cclxuICAgICY6aG92ZXIge1xyXG4gICAgICBjdXJzb3I6IG1vdmU7XHJcbiAgICB9XHJcblxyXG4gICAgLnRvcC1kcmFwLWJsb2NrLCAubGVmdC1kcmFwLWJsb2NrIHtcclxuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICBsZWZ0OiAwO1xyXG4gICAgfVxyXG4gICAgLy8gZGVmYWx1bHRcclxuICAgIC50b3AtZHJhcC1ibG9jayB7XHJcbiAgICAgIHJpZ2h0OiAwO1xyXG4gICAgICBoZWlnaHQ6IDE1cHg7XHJcbiAgICB9XHJcbiAgICAubGVmdC1kcmFwLWJsb2NrIHtcclxuICAgICAgaGVpZ2h0OiA1NXB4O1xyXG4gICAgICByaWdodDogMTIwcHg7XHJcbiAgICB9XHJcblxyXG4gICAgLy8gcHJldmlld1xyXG4gICAgJi5wcmV2aWV3IHtcclxuICAgICAgLmxlZnQtZHJhcC1ibG9jayB7XHJcbiAgICAgICAgd2lkdGg6IDIwcHg7XHJcbiAgICAgICAgaGVpZ2h0OiA3OXB4O1xyXG4gICAgICAgIHJpZ2h0OiAxNjBweDtcclxuICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC8vIGRpYWxvZyB3aXRoIHNjYWxlXHJcbiAgICAmLnNjYWxlIHtcclxuICAgICAgLmxlZnQtZHJhcC1ibG9jayB7XHJcbiAgICAgICAgcmlnaHQ6IDUzcHg7XHJcbiAgICAgICAgbGVmdDogMTc3cHg7XHJcbiAgICAgICAgaGVpZ2h0OiA0MHB4O1xyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcblxyXG4uTU9KaVdlYkV4dGVuc2lvbnBhbmVsT2JqZWN0IHtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgd2lkdGg6IGNhbGMoMTAwJSArIDVweCk7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgLy8gYmFja2dyb3VuZDogI2ZmZmZmZjtcclxuICB6LWluZGV4OiAkZGlhbG9nLXotaW5kZXg7XHJcbiAgLy8g5LiN5pi+56S654Gr54uQaWZyYW1l55qE5rua5Yqo5p2hXHJcbiAgLy8gJi5maXJlZm94LW9iamVjdCB7XHJcbiAgLy8gICB3aWR0aDogY2FsYygxMDAlICsgMTVweCk7XHJcbiAgLy8gfVxyXG59XHJcblxyXG5Aa2V5ZnJhbWVzIGZhZGVJbiB7XHJcbiAgZnJvbSB7XHJcbiAgICBvcGFjaXR5OiAwO1xyXG4gIH1cclxuICB0byB7XHJcbiAgICBvcGFjaXR5OiAxO1xyXG4gIH1cclxufVxyXG4iXSwic291cmNlUm9vdCI6IiJ9 */</style></head>
-<body class="">
+<body>
 <div class="page">
 
   <div class="photo">
@@ -601,7 +155,7 @@ a:hover .gwd-tooltip[data-v-07d1070f] {
   </div>
 
   <div class="banner">
-    <h1 class="">姓名（待完善）</h1>
+    <h1>姓名（待完善）</h1>
     <div class="title">产品总监 / 产品经理</div>
     <div class="accent-line"></div>
   </div>
@@ -609,138 +163,138 @@ a:hover .gwd-tooltip[data-v-07d1070f] {
   <div class="body">
 
     <aside>
-      <section class="about edit-hoverable">
-        <h2 class="">个人优势</h2>
-        <p class="">17年互联网产品经验，从产品专员到产品总监，完整经历产品全生命周期。擅长从0到1搭建产品体系，曾主导数据平台、游戏平台、家装平台等多条产品线。覆盖C端与B端产品，深入理解应用分发、游戏联运、电商SaaS等商业模式。</p>
+      <section class="about">
+        <h2>个人优势</h2>
+        <p>17年互联网产品经验，从产品专员到产品总监，完整经历产品全生命周期。擅长从0到1搭建产品体系，曾主导数据平台、游戏平台、家装平台等多条产品线。覆盖C端与B端产品，深入理解应用分发、游戏联运、电商SaaS等商业模式。</p>
       </section>
 
-      <section class="edit-hoverable">
-        <h2 class="">教育背景</h2>
-        <div class="edu-block edit-hoverable">
+      <section >
+        <h2>教育背景</h2>
+        <div class="edu-block">
           <div class="deg">计算机科学与技术 · 本科</div>
           <div class="sch">河北大学</div>
           <div class="yr">2002 – 2006</div>
         </div>
       </section>
 
-      <section class="edit-hoverable">
-        <h2 class="">专业技能</h2>
+      <section >
+        <h2>专业技能</h2>
         <div class="pills">
-          <span class="pill edit-hoverable">产品战略与规划</span>
-          <span class="pill edit-hoverable">团队组建管理</span>
-          <span class="pill edit-hoverable">需求分析/PRD</span>
-          <span class="pill edit-hoverable">C端/B端产品</span>
-          <span class="pill edit-hoverable">数据驱动决策</span>
-          <span class="pill edit-hoverable">敏捷迭代管理</span>
-          <span class="pill edit-hoverable">ASO/应用分发</span>
-          <span class="pill edit-hoverable">游戏联运</span>
-          <span class="pill edit-hoverable">电商</span>
-          <span class="pill edit-hoverable">3D云设计</span>
-          <span class="pill edit-hoverable">SaaS多租户</span>
-          <span class="pill edit-hoverable">竞品分析</span>
-          <span class="pill edit-hoverable">原型设计</span>
+          <span class="pill">产品战略与规划</span>
+          <span class="pill">团队组建管理</span>
+          <span class="pill">需求分析/PRD</span>
+          <span class="pill">C端/B端产品</span>
+          <span class="pill">数据驱动决策</span>
+          <span class="pill">敏捷迭代管理</span>
+          <span class="pill">ASO/应用分发</span>
+          <span class="pill">游戏联运</span>
+          <span class="pill">电商</span>
+          <span class="pill">3D云设计</span>
+          <span class="pill">SaaS多租户</span>
+          <span class="pill">竞品分析</span>
+          <span class="pill">原型设计</span>
         </div>
       </section>
 
-      <section class="edit-hoverable">
-        <h2 class="">产品矩阵</h2>
+      <section >
+        <h2>产品矩阵</h2>
         <div style="margin-bottom:3px;font-weight:600;font-size:8.5pt">应用类</div>
-        <p style="font-size:8pt;color:var(--muted);line-height:1.4;margin-bottom:6px" class="">系统清理 · 影音编辑 · 锻炼健身 · 加速器 · 扫码 · 手账 · 闹钟 · 小工具集</p>
+        <p style="font-size:8pt;color:var(--muted);line-height:1.4;margin-bottom:6px">系统清理 · 影音编辑 · 锻炼健身 · 加速器 · 扫码 · 手账 · 闹钟 · 小工具集</p>
         <div style="margin-bottom:3px;font-weight:600;font-size:8.5pt">游戏类</div>
-        <p style="font-size:8pt;color:var(--muted);line-height:1.4" class="">弹幕射击 · 三消 · 2048 · 祖玛 · 泡泡龙 · 俄罗斯方块 · 连连看 · 跑酷 · 捕鱼 · 数独 · 五子棋 · 台球 · 老虎机 等23款</p>
+        <p style="font-size:8pt;color:var(--muted);line-height:1.4">弹幕射击 · 三消 · 2048 · 祖玛 · 泡泡龙 · 俄罗斯方块 · 连连看 · 跑酷 · 捕鱼 · 数独 · 五子棋 · 台球 · 老虎机 等23款</p>
       </section>
 
-      <section class="lang edit-hoverable">
-        <h2 class="">语言</h2>
+      <section class="lang">
+        <h2>语言</h2>
         <ul>
-          <li class="edit-hoverable"><span class="dot"></span>中文 — 母语</li>
-          <li class="edit-hoverable"><span class="dot"></span>英语 — 工作流利</li>
+          <li ><span class="dot"></span>中文 — 母语</li>
+          <li ><span class="dot"></span>英语 — 工作流利</li>
         </ul>
       </section>
     </aside>
 
     <main>
       <div class="contact">
-        <div class="item edit-hoverable"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span> 待完善</div>
-        <div class="item edit-hoverable"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 7l-10 6L2 7"></path></svg></span> 待完善</div>
-        <div class="item edit-hoverable"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10l10-5 10 5-10 5-10-5z"></path><path d="M6 12.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"></path></svg></span> 河北大学 · 计算机</div>
-        <div class="item edit-hoverable"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span> 待完善</div>
+        <div class="item"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span> 待完善</div>
+        <div class="item"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 7l-10 6L2 7"></path></svg></span> 待完善</div>
+        <div class="item"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10l10-5 10 5-10 5-10-5z"></path><path d="M6 12.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"></path></svg></span> 河北大学 · 计算机</div>
+        <div class="item"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span> 待完善</div>
       </div>
 
-      <section class="edit-hoverable">
-        <h2 class="">工作经历</h2>
+      <section >
+        <h2>工作经历</h2>
         <div class="timeline">
 
-          <div class="exp-item edit-hoverable">
+          <div class="exp-item">
             <div class="top"><div class="role">产品总监</div><div class="when">2016 – 2023</div></div>
-            <div class="org">北京尖峰创游科技有限公司123</div>
+            <div class="org">北京尖峰创游科技有限公司</div>
             <ul>
-              <li class="edit-hoverable">从零组建产品研发团队，负责产品、UI/UE、开发、测试、运营等岗位招聘与日常管理</li>
-              <li class="edit-hoverable">制定产品战略与路线图，统筹多条产品线规划、优先级排序与资源分配</li>
-              <li class="edit-hoverable">建立产品设计规范与开发流程，推动敏捷迭代与数据驱动决策</li>
+              <li >从零组建产品研发团队，负责产品、UI/UE、开发、测试、运营等岗位招聘与日常管理</li>
+              <li >制定产品战略与路线图，统筹多条产品线规划、优先级排序与资源分配</li>
+              <li >建立产品设计规范与开发流程，推动敏捷迭代与数据驱动决策</li>
             </ul>
             <div class="proj">数据邦 — 移动应用市场数据分析平台</div>
-            <ul><li class="edit-hoverable">覆盖App Store+Google Play双商店的SaaS数据分析平台，含ASO优化、竞品分析、Apple Ads追踪、多租户计费与数据采集引擎</li></ul>
+            <ul><li >覆盖App Store+Google Play双商店的SaaS数据分析平台，含ASO优化、竞品分析、Apple Ads追踪、多租户计费与数据采集引擎</li></ul>
             <div class="proj">Acorn Game — 竞技游戏平台</div>
-            <ul><li class="edit-hoverable">竞技能游戏平台，含1v1/锦标赛/Bracket淘汰赛、ELO公平匹配、现金/实物奖励、开发者SDK接入、反作弊风控</li></ul>
+            <ul><li >竞技能游戏平台，含1v1/锦标赛/Bracket淘汰赛、ELO公平匹配、现金/实物奖励、开发者SDK接入、反作弊风控</li></ul>
             <div class="proj">积分墙 — 应用推广与激励下载平台</div>
-            <ul><li class="edit-hoverable">CPI/CPA激励下载平台，含积分体系/兑换/成长体系，广告主管理/任务审核/反作弊，ROI看板</li></ul>
+            <ul><li >CPI/CPA激励下载平台，含积分体系/兑换/成长体系，广告主管理/任务审核/反作弊，ROI看板</li></ul>
             <div class="proj">Acorn Coupon — 优惠券分发与导购平台</div>
-            <ul><li class="edit-hoverable">优惠券聚合分发平台，一键领取+比价导购，商家入驻+佣金CPS/CPC结算</li></ul>
+            <ul><li >优惠券聚合分发平台，一键领取+比价导购，商家入驻+佣金CPS/CPC结算</li></ul>
             <div class="proj">POPGAME官网 — 游戏源码销售平台</div>
-            <ul><li class="edit-hoverable">源码交易+企业展示，含CMS内容管理、在线购买/支付/交付、招聘模块</li></ul>
+            <ul><li >源码交易+企业展示，含CMS内容管理、在线购买/支付/交付、招聘模块</li></ul>
             <div class="proj">产品矩阵 — 应用与游戏产品群</div>
-            <ul><li class="edit-hoverable">8类应用+23款游戏的矩阵化运营，流量互导与规模化变现</li></ul>
+            <ul><li >8类应用+23款游戏的矩阵化运营，流量互导与规模化变现</li></ul>
           </div>
 
-          <div class="exp-item edit-hoverable">
+          <div class="exp-item">
             <div class="top"><div class="role">产品经理</div><div class="when">2012 – 2016</div></div>
             <div class="org">北京新途网络科技有限公司</div>
             <div class="proj">新途网 — 家装在线3D设计与电商服务平台</div>
             <ul>
-              <li class="edit-hoverable">C端：2D户型绘制+3D云设计+渲染+模板灵感+家装电商+预算管理+施工跟踪</li>
-              <li class="edit-hoverable">B端设计师：作品集/接单/方案批注；B端商家：3D模型入驻/商品管理/营销工具</li>
-              <li class="edit-hoverable">后台：多角色权限/内容审核/3D引擎调度/佣金结算/对账报表</li>
+              <li >C端：2D户型绘制+3D云设计+渲染+模板灵感+家装电商+预算管理+施工跟踪</li>
+              <li >B端设计师：作品集/接单/方案批注；B端商家：3D模型入驻/商品管理/营销工具</li>
+              <li >后台：多角色权限/内容审核/3D引擎调度/佣金结算/对账报表</li>
             </ul>
             <div class="proj">国美家</div>
-            <ul><li class="edit-hoverable">[ 待补充产品描述 ]</li></ul>
+            <ul><li >[ 待补充产品描述 ]</li></ul>
             <div class="proj">ToB微信开发框架 — 企业微信应用SaaS平台</div>
-            <ul><li class="edit-hoverable">公众号+小程序快速开发框架，营销组件(拼团/砍价/秒杀)、多租户OEM、开放API</li></ul>
+            <ul><li >公众号+小程序快速开发框架，营销组件(拼团/砍价/秒杀)、多租户OEM、开放API</li></ul>
           </div>
 
-          <div class="exp-item edit-hoverable">
+          <div class="exp-item">
             <div class="top"><div class="role">产品专员</div><div class="when">2010 – 2012</div></div>
             <div class="org">北京复兴年代网络科技有限公司</div>
             <div class="proj">游戏平台网站 — 网页游戏运营平台</div>
-            <ul><li class="edit-hoverable">页游联运平台：游戏大厅/开服/充值(网银+充值卡)/VIP/礼包/社区，后台SDK接入/渠道对账/运营工具</li></ul>
+            <ul><li >页游联运平台：游戏大厅/开服/充值(网银+充值卡)/VIP/礼包/社区，后台SDK接入/渠道对账/运营工具</li></ul>
             <div class="proj">联运管理平台 — 多渠道联运后台</div>
-            <ul><li class="edit-hoverable">渠道管理/分成配置/用户SID穿透/分渠道数据报表/财务对账/充值对账/合同管理</li></ul>
+            <ul><li >渠道管理/分成配置/用户SID穿透/分渠道数据报表/财务对账/充值对账/合同管理</li></ul>
             <div class="proj">产品运营</div>
-            <ul><li class="edit-hoverable">游戏评测筛选/上线准备/活动策划执行/数据监控(DAU/ARPU/留存)/竞品跟踪</li></ul>
+            <ul><li >游戏评测筛选/上线准备/活动策划执行/数据监控(DAU/ARPU/留存)/竞品跟踪</li></ul>
           </div>
 
-          <div class="exp-item edit-hoverable">
+          <div class="exp-item">
             <div class="top"><div class="role">产品专员</div><div class="when">2008 – 2010</div></div>
             <div class="org">北京五岳红狐科技有限公司</div>
             <div class="proj">游戏官网 — 大型MMORPG官方网站</div>
-            <ul><li class="edit-hoverable">品牌展示/新闻/下载/充值(网银+充值卡)/用户中心/论坛/活动/客服</li></ul>
+            <ul><li >品牌展示/新闻/下载/充值(网银+充值卡)/用户中心/论坛/活动/客服</li></ul>
             <div class="proj">客服系统 — 在线客服与工单管理</div>
-            <ul><li class="edit-hoverable">实时聊天+工单流转+智能路由+知识库+客服工作台+满意度统计</li></ul>
+            <ul><li >实时聊天+工单流转+智能路由+知识库+客服工作台+满意度统计</li></ul>
             <div class="proj">产品运营</div>
-            <ul><li class="edit-hoverable">新游评测/活动策划/数据分析/用户反馈/素材管理</li></ul>
+            <ul><li >新游评测/活动策划/数据分析/用户反馈/素材管理</li></ul>
           </div>
 
-          <div class="exp-item edit-hoverable">
+          <div class="exp-item">
             <div class="top"><div class="role">游戏测试</div><div class="when">2006 – 2008</div></div>
             <div class="org">北京XX科技有限公司</div>
-            <ul><li class="edit-hoverable">端游功能/兼容/性能/压力/回归测试，缺陷管理，跨部门协作</li></ul>
+            <ul><li >端游功能/兼容/性能/压力/回归测试，缺陷管理，跨部门协作</li></ul>
           </div>
 
         </div>
       </section>
 
-      <section class="edit-hoverable">
-        <h2 class="">作品集</h2>
+      <section >
+        <h2>作品集</h2>
         <a href="作品集.html" class="portfolio-link">
           查看产品设计与UI作品集 <span class="arrow">→</span>
         </a>
@@ -844,6 +398,7 @@ a:hover .gwd-tooltip[data-v-07d1070f] {
       el.classList.remove('edit-target');
     });
     $$('.del-btn, .add-btn').forEach(function (b) { b.remove(); });
+    $$('.edit-hoverable').forEach(function (el) { el.classList.remove('edit-hoverable'); });
     $$('.page a').forEach(function (a) { a.removeEventListener('click', guard); });
   }
 
@@ -896,7 +451,7 @@ a:hover .gwd-tooltip[data-v-07d1070f] {
     var was = editing;
     if (was) toggleEdit();
 
-    var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    var html = captureCleanHTML();
     var blob = new Blob([html], { type: 'text/html;charset=utf-8' });
 
     var finish = function () {
@@ -956,10 +511,24 @@ a:hover .gwd-tooltip[data-v-07d1070f] {
     });
   }
 
+  function captureCleanHTML() {
+    var root = document.documentElement.cloneNode(true);
+    var junk = [];
+    Array.prototype.slice.call(root.querySelectorAll('script,style,link')).forEach(function (el) {
+      var ref = (el.getAttribute('src') || '') + (el.getAttribute('href') || '');
+      var txt = (el.tagName === 'STYLE' || el.tagName === 'SCRIPT') ? (el.textContent || '') : '';
+      if (/(chrome|moz|edge|safari)-extension:/i.test(ref)) { junk.push(el); return; }
+      if (/chrome-extension:|moz-extension:|safari-extension:/i.test(txt)) { junk.push(el); return; }
+      if (el.tagName === 'STYLE' && /\.(gwd|bjg)-/i.test(txt)) { junk.push(el); return; }
+    });
+    junk.forEach(function (el) { if (el.parentNode) el.parentNode.removeChild(el); });
+    return '<!DOCTYPE html>\n' + root.outerHTML;
+  }
+
   window.publishGitHub = function () {
     var was = editing;
     if (was) toggleEdit();
-    var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    var html = captureCleanHTML();
     var token = ghToken();
 
     var proceed = function (tk) {
@@ -1028,4 +597,4 @@ a:hover .gwd-tooltip[data-v-07d1070f] {
 })();
 </script>
 
-<ec-assistant style="display: none; top: 229.39px;"></ec-assistant><div id="el-popper-container-4004"><div class="el-popper is-pure is-light el-tooltip el-dropdown__popper" tabindex="-1" aria-hidden="true" data-popper-reference-hidden="true" data-popper-escaped="true" data-popper-placement="bottom" style="z-index: 2001; position: absolute; inset: 12px auto auto 0px; display: none;"><div class="el-scrollbar"><div class="el-scrollbar__wrap el-scrollbar__wrap--hidden-default"><div class="el-scrollbar__view el-dropdown__list" style=""><ul data-v-7e6fcebc="" class="el-dropdown-menu" tabindex="-1" role="menu" aria-labelledby="el-id-4004-0" id="el-id-4004-1" style="outline: none;"><!--v-if--><li data-el-collection-item="" aria-disabled="false" class="el-dropdown-menu__item" tabindex="-1" role="menuitem"><!--v-if-->直接下载</li><!--v-if--><li data-el-collection-item="" aria-disabled="false" class="el-dropdown-menu__item" tabindex="-1" role="menuitem"><!--v-if-->打包下载</li></ul></div></div><div class="el-scrollbar__bar is-horizontal" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div></div><div class="el-scrollbar__bar is-vertical" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div></div></div><span class="el-popper__arrow" data-popper-arrow="" style="position: absolute; left: 5.33333px;"></span></div><div class="el-popper is-pure is-light el-tooltip el-select__popper" tabindex="-1" aria-hidden="true" role="tooltip" id="el-id-4004-9" data-popper-reference-hidden="true" data-popper-escaped="true" data-popper-placement="bottom-start" style="z-index: 2002; position: absolute; inset: 12px auto auto 0px; display: none;"><div class="el-select-dropdown"><!--v-if--><!--v-if--><div class="el-scrollbar" style=""><div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default"><ul id="el-id-4004-8" class="el-scrollbar__view el-select-dropdown__list" role="listbox" aria-orientation="vertical" style=""><!--v-if--><li data-v-7e6fcebc="" id="el-id-4004-10" class="el-select-dropdown__item is-selected" role="option" aria-selected="true"><span>自动排序</span></li><li data-v-7e6fcebc="" id="el-id-4004-11" class="el-select-dropdown__item" role="option" aria-selected="false"><span>大图优先</span></li><li data-v-7e6fcebc="" id="el-id-4004-12" class="el-select-dropdown__item" role="option" aria-selected="false"><span>小图优先</span></li></ul></div><div class="el-scrollbar__bar is-horizontal" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div></div><div class="el-scrollbar__bar is-vertical" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div></div></div><!--v-if--><!--v-if--><!--v-if--></div><span class="el-popper__arrow" data-popper-arrow="" style="position: absolute; left: 5.33333px;"></span></div><div class="el-popper is-pure is-light el-tooltip el-select__popper" tabindex="-1" aria-hidden="true" role="tooltip" id="el-id-4004-14" data-popper-reference-hidden="true" data-popper-escaped="true" data-popper-placement="bottom-start" style="z-index: 2003; position: absolute; inset: 12px auto auto 0px; display: none;"><div class="el-select-dropdown is-multiple"><!--v-if--><!--v-if--><div class="el-scrollbar is-empty" style="display: none;"><div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default"><ul id="el-id-4004-13" class="el-scrollbar__view el-select-dropdown__list" role="listbox" aria-orientation="vertical" style=""><!--v-if--></ul></div><div class="el-scrollbar__bar is-horizontal" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div></div><div class="el-scrollbar__bar is-vertical" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div></div></div><div class="el-select-dropdown__empty"><span>No data</span></div><!--v-if--><!--v-if--></div><span class="el-popper__arrow" data-popper-arrow="" style="position: absolute; left: 5.33333px;"></span></div><div class="el-popper is-pure is-light el-tooltip el-dropdown__popper" tabindex="-1" aria-hidden="true" data-popper-reference-hidden="true" data-popper-escaped="true" data-popper-placement="bottom" style="z-index: 2004; position: absolute; inset: 12px auto auto 0px; display: none;"><div class="el-scrollbar"><div class="el-scrollbar__wrap el-scrollbar__wrap--hidden-default"><div class="el-scrollbar__view el-dropdown__list" style=""><ul data-v-019a4286="" class="el-dropdown-menu" tabindex="-1" role="menu" aria-labelledby="el-id-4004-15" id="el-id-4004-16" style="outline: none;"><!--v-if--><li data-el-collection-item="" aria-disabled="false" class="el-dropdown-menu__item" tabindex="-1" role="menuitem"><!--v-if-->直接下载</li><!--v-if--><li data-el-collection-item="" aria-disabled="false" class="el-dropdown-menu__item" tabindex="-1" role="menuitem"><!--v-if-->打包下载</li></ul></div></div><div class="el-scrollbar__bar is-horizontal" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div></div><div class="el-scrollbar__bar is-vertical" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div></div></div><span class="el-popper__arrow" data-popper-arrow="" style="position: absolute; left: 5.33333px;"></span></div></div><ec-assistant-commodity style="display: none;"></ec-assistant-commodity><script src="chrome-extension://ddicoofdkbcdkkeecgafcoabogcgicfp/content/windowDataMessage.js"></script><div id="autoglm-main-content" class="autoglm-main-content" data-version="0.1.6"></div></body></html>
+<ec-assistant style="display: none; top: 229.39px;"></ec-assistant><div id="el-popper-container-4004"><div class="el-popper is-pure is-light el-tooltip el-dropdown__popper" tabindex="-1" aria-hidden="true" data-popper-reference-hidden="true" data-popper-escaped="true" data-popper-placement="bottom" style="z-index: 2001; position: absolute; inset: 12px auto auto 0px; display: none;"><div class="el-scrollbar"><div class="el-scrollbar__wrap el-scrollbar__wrap--hidden-default"><div class="el-scrollbar__view el-dropdown__list" style=""><ul data-v-7e6fcebc="" class="el-dropdown-menu" tabindex="-1" role="menu" aria-labelledby="el-id-4004-0" id="el-id-4004-1" style="outline: none;"><!--v-if--><li data-el-collection-item="" aria-disabled="false" class="el-dropdown-menu__item" tabindex="-1" role="menuitem"><!--v-if-->直接下载</li><!--v-if--><li data-el-collection-item="" aria-disabled="false" class="el-dropdown-menu__item" tabindex="-1" role="menuitem"><!--v-if-->打包下载</li></ul></div></div><div class="el-scrollbar__bar is-horizontal" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div></div><div class="el-scrollbar__bar is-vertical" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div></div></div><span class="el-popper__arrow" data-popper-arrow="" style="position: absolute; left: 5.33333px;"></span></div><div class="el-popper is-pure is-light el-tooltip el-select__popper" tabindex="-1" aria-hidden="true" role="tooltip" id="el-id-4004-9" data-popper-reference-hidden="true" data-popper-escaped="true" data-popper-placement="bottom-start" style="z-index: 2002; position: absolute; inset: 12px auto auto 0px; display: none;"><div class="el-select-dropdown"><!--v-if--><!--v-if--><div class="el-scrollbar" style=""><div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default"><ul id="el-id-4004-8" class="el-scrollbar__view el-select-dropdown__list" role="listbox" aria-orientation="vertical" style=""><!--v-if--><li data-v-7e6fcebc="" id="el-id-4004-10" class="el-select-dropdown__item is-selected" role="option" aria-selected="true"><span>自动排序</span></li><li data-v-7e6fcebc="" id="el-id-4004-11" class="el-select-dropdown__item" role="option" aria-selected="false"><span>大图优先</span></li><li data-v-7e6fcebc="" id="el-id-4004-12" class="el-select-dropdown__item" role="option" aria-selected="false"><span>小图优先</span></li></ul></div><div class="el-scrollbar__bar is-horizontal" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div></div><div class="el-scrollbar__bar is-vertical" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div></div></div><!--v-if--><!--v-if--><!--v-if--></div><span class="el-popper__arrow" data-popper-arrow="" style="position: absolute; left: 5.33333px;"></span></div><div class="el-popper is-pure is-light el-tooltip el-select__popper" tabindex="-1" aria-hidden="true" role="tooltip" id="el-id-4004-14" data-popper-reference-hidden="true" data-popper-escaped="true" data-popper-placement="bottom-start" style="z-index: 2003; position: absolute; inset: 12px auto auto 0px; display: none;"><div class="el-select-dropdown is-multiple"><!--v-if--><!--v-if--><div class="el-scrollbar is-empty" style="display: none;"><div class="el-select-dropdown__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default"><ul id="el-id-4004-13" class="el-scrollbar__view el-select-dropdown__list" role="listbox" aria-orientation="vertical" style=""><!--v-if--></ul></div><div class="el-scrollbar__bar is-horizontal" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div></div><div class="el-scrollbar__bar is-vertical" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div></div></div><div class="el-select-dropdown__empty"><span>No data</span></div><!--v-if--><!--v-if--></div><span class="el-popper__arrow" data-popper-arrow="" style="position: absolute; left: 5.33333px;"></span></div><div class="el-popper is-pure is-light el-tooltip el-dropdown__popper" tabindex="-1" aria-hidden="true" data-popper-reference-hidden="true" data-popper-escaped="true" data-popper-placement="bottom" style="z-index: 2004; position: absolute; inset: 12px auto auto 0px; display: none;"><div class="el-scrollbar"><div class="el-scrollbar__wrap el-scrollbar__wrap--hidden-default"><div class="el-scrollbar__view el-dropdown__list" style=""><ul data-v-019a4286="" class="el-dropdown-menu" tabindex="-1" role="menu" aria-labelledby="el-id-4004-15" id="el-id-4004-16" style="outline: none;"><!--v-if--><li data-el-collection-item="" aria-disabled="false" class="el-dropdown-menu__item" tabindex="-1" role="menuitem"><!--v-if-->直接下载</li><!--v-if--><li data-el-collection-item="" aria-disabled="false" class="el-dropdown-menu__item" tabindex="-1" role="menuitem"><!--v-if-->打包下载</li></ul></div></div><div class="el-scrollbar__bar is-horizontal" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div></div><div class="el-scrollbar__bar is-vertical" style="display: none;"><div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div></div></div><span class="el-popper__arrow" data-popper-arrow="" style="position: absolute; left: 5.33333px;"></span></div></div><ec-assistant-commodity style="display: none;"></ec-assistant-commodity><div id="autoglm-main-content" class="autoglm-main-content" data-version="0.1.6"></div></body></html>
